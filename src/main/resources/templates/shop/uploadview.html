@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="htto://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<form action="/upload.action" method="post" enctype="multipart/form-data">
+
+	<input type="file" name="files" multiple>
+	<input type="submit" value="Upload Files"/>
+</form>
+
+		<div id="">
+		<b>아이디&nbsp;&nbsp;&nbsp;&nbsp;</b>
+		
+		
+		<b>판매상태 : &nbsp;&nbsp;</b>
+		판매중 &nbsp;<input type="radio" name="prodSale" value="판매중"/> 
+		&nbsp;판매완료 <input type="radio" name="prodSale" value="판매완료"/> 
+		</div>
+
+			
+		<div class="">
+			<dl>
+				<dt>제&nbsp;&nbsp;&nbsp;&nbsp;목&nbsp;&nbsp;&nbsp;
+				<input type="text" name="prodSubject" size="60px" 
+				maxlength="100" class=""/>
+				</dt>
+			</dl>		
+		</div>
+		
+		<div>
+			<span>
+				<span>가&nbsp;&nbsp;&nbsp;&nbsp;격&nbsp;&nbsp;&nbsp;
+				<input type="text" name="prodPrice" size="20px" maxlength="20" placeholder="ex)30000" onkeypress="return checkNumber(event)" class=""/>
+				</span>
+				
+				<span>거래장소&nbsp;&nbsp;
+				<input type="text" name="prodAddr" size="20px" maxlength="20" placeholder="구 까지 작성해주세요" class=""/>
+				</span>
+				
+								
+			<span class="pagination">			
+			<select name="prodSelect">
+			    <option value="">상품분류</option>
+			    <optgroup label="--ART--"></optgroup>
+				    <option value="poster">POSTER</option>
+				    <option value="pigure">PIGURE</option>
+				    <option value="goods">GOODS</option>
+				    <option value="etc">ETC</option>
+				<optgroup label="--MUSIC--"></optgroup>
+				    <option value="lp">LP</option>
+				    <option value="videos">VIDEOS</option>
+				    <option value="tape">TAPE</option>
+				    <option value="cd">CD/DVD</option>
+				    <option value="instrument">INSTRUMENT</option>
+			</select>
+			</span>
+			</span>		
+		</div>
+		
+
+			<div id="">
+			<b>상품상태 : &nbsp;&nbsp;</b>
+			상 &nbsp;&nbsp;<input type="radio" name="prodQuality" value="상"/> 
+			중 &nbsp;&nbsp;<input type="radio" name="prodQuality" value="중"/> 
+			하 &nbsp;&nbsp;<input type="radio" name="prodQuality" value="하"/> 
+
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+			<b>거래방식 : &nbsp;&nbsp;</b>
+			택배 &nbsp;&nbsp;<input type="radio" name="prodTrade" value="택배"/> 
+			직거래 &nbsp;&nbsp;<input type="radio" name="prodTrade" value="직거래"/> 
+			</div>
+			
+			<br/>
+
+		
+		<div class="pagination">
+			<dl>
+				<dt>내&nbsp;&nbsp;&nbsp;&nbsp;용</dt>
+				<dd>
+				<textarea rows="12" cols="65" name="prodContent" 
+				class=""></textarea>
+				</dd>
+			</dl>
+		</div>
+		
+		<div style="margin-bottom: 15px;">
+			<input type="file" name="upfiles" multiple>
+		</div>
+
+	</div>
+	</form>
+		<div id="bbsCreated_footer" style="margin-bottom: 50px;">
+			<input type="button" value=" 등록하기 " class="" onclick="sendIt();"/>
+			<input type="reset" value=" 다시입력 " class="" onclick="document.myForm.subject.focus();"/>
+			<input type="button" value=" 작성취소 " class="" onclick="javascript:location.href='/shop.action';"/>
+	
+		</div>
+
+	
+		</div>
+
+</body>
+</html>

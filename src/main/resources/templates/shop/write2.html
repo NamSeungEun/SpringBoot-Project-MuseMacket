@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>MUSEMARKET_WRITE</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    
+    
+    <script type="text/javascript" src="js/util.js"></script>
+
+	<script type="text/javascript">
+	
+ 	const sendIt = () => {		 
+	
+ 		var f = document.myForm;
+ 		
+		str = f.prodSale.value;
+		str = str.trim();
+		if(!str){
+			alert("\n판매 상태를 체크해주세요");
+			f.prodSale.focus();
+			return;
+		}
+
+		f.prodSale.value = str;
+		
+		str = f.prodSubject.value;
+		str = str.trim();
+		if(!str){
+			alert("\n제목을 입력하세요.");
+			f.prodSubject.focus();
+			return;
+		}			
+		
+		f.prodSubject.value = str;
+		
+		str = f.prodPrice.value;
+		str = str.trim();
+		if(!str){
+			alert("\n가격을 입력하세요.");
+			f.prodPrice.focus();
+			return;
+		}	
+		
+		f.prodPrice.value = str;
+		
+		str = f.prodAddr.value;
+		str = str.trim();
+		if(!str){
+			alert("\n거래장소를 입력하세요.");
+			f.prodAddr.focus();
+			return;
+		}	
+		
+		f.prodAddr.value = str;
+		
+		
+		str = f.prodSelect.value;
+		str = str.trim();
+		if(!str){
+			alert("\n상품분류를 체크해주세요.");
+			f.prodSelect.focus();
+			return;
+		}	
+		
+		f.prodSelect.value = str;
+		
+		str = f.prodQuality.value;
+		str = str.trim();
+		if(!str){
+			alert("\n상품상태를 체크해주세요.");
+			f.prodQuality.focus();
+			return;
+		}	
+		
+		f.prodQuality.value = str;
+		
+		
+		str = f.prodTrade.value;
+		str = str.trim();
+		if(!str){
+			alert("\n거래방식을 체크해주세요.");
+			f.prodTrade.focus();
+			return;
+		}	
+		
+		f.prodTrade.value = str;
+		
+		
+		str = f.prodContent.value;
+		str = str.trim();
+		if(!str){
+			alert("\n상품소개를 작성해주세요.");
+			f.prodContent.focus();
+			return;
+		}	
+		
+		f.prodContent.value = str;
+/* 		
+		str = f.upfiles.value;
+		str = str.trim();
+		if(!str){
+			alert("\n사진을 첨부해주세요");
+			f.upfiles.focus();
+			return;
+		}	
+		
+		f.upfiles.value = str;
+		 */
+		
+		
+		
+		alert("등록 하시겠습니까?");
+		
+		f.action = "/upload.action";
+	 	f.submit(); 
+	}
+
+	
+</script>
+    
+    
+    
+</head><!--/head-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+	<header id="header"><!--header-->
+		<div class="header_top"><!--header_top-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 ">
+						<div class="contactinfo">
+							<ul class="nav nav-pills">
+								<li><a href=""><i class="fa fa-phone"></i> +2 12 34 56 789</a></li>
+								<li><a href=""><i class="fa fa-envelope"></i> samjo@domain.com</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="social-icons pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="https://de.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header_top-->
+		
+		<div class="header-middle"><!--header-middle-->
+			<div class="container"><!-- http://localhost:8080/shop.action -->
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left">
+							<a href="http://localhost:8080/"><img src="images/home/muse.png" width="223px" height="166px" alt="" /></a>
+						</div>
+						<div class="btn-group pull-right">
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+									LANGUAGE
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a href="">KOR</a></li>
+									<li><a href="">UK</a></li>
+								</ul>
+							</div>
+						<!-- 	
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+									DOLLAR
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a href="">Canadian Dollar</a></li>
+									<li><a href="">Pound</a></li>
+								</ul>
+							</div> -->
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href=""><i class="fa fa-user"></i> MyPage</a></li>
+								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
+<!-- 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li> -->
+										
+								<li><a href="javascript:location.href='/upload.action';"><i class="fa fa-pencil-square"></i> write</a></li>
+								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+	
+		<div class="header-bottom"><!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a href="index.html">Home</a></li>
+								<li class="dropdown"><a href="#" class="active">Shop<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        <li><a href="shop.html" class="active">Shop</a></li>                                        
+										<li><a href="product-details.html">Art</a></li> 
+										<li><a href="checkout.html">Music</a></li> 
+                                    </ul>
+                                </li> 
+								<li class="dropdown"><a href="#">Community<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        <li><a href="blog.html">Blog List</a></li>
+										<li><a href="blog-single.html">Blog Single</a></li>
+                                    </ul>
+                                </li> 
+<!-- 								<li><a href="404.html">404</a></li>
+								<li><a href="contact-us.html">Contact</a></li> -->
+							</ul>
+						</div>
+					</div>
+				
+							
+					<div class="col-sm-3">
+						<div class="search_box pull-right">
+							<input type="text" placeholder="Search"/>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+	</header>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<div align="center" style="margin-top: 50px; margin-bottom: 100px;">
+
+	<form action="sendIt();" method="post" name="myForm" enctype="multipart/form-data">
+	<div id="" >
+		
+		<div id="col-12">
+		<label for="userId" class="form-label">ID</label>
+		
+		<div id="col-12">
+		<b>판매상태 : &nbsp;&nbsp;</b>
+		판매중 &nbsp;<input type="radio" name="prodSale" value="판매중"/> 
+		&nbsp;판매완료 <input type="radio" name="prodSale" value="판매완료"/> 
+		</div><br/>
+		</div>
+		
+		
+			
+		<div class="col-12">
+			<dl>
+				
+				<dt><label for="prodSubject" class="form-label">제목</label>
+				<input type="text" name="prodSubject" size="30px" id="prodSubject"
+				maxlength="100" class="wform-control"/></dt>
+				
+				<br/>
+								
+				<dt><label for="prodName" class="form-label">제품명</label>
+				<input type="text" name="prodName" size="30px" id="prodName"
+				maxlength="100" class="wform-control"/></dt>
+				
+				<br/>
+				
+				<span>
+				
+				<label for="prodPrice" class="form-label">가격</label>
+				<input type="text" name="prodPrice" size="30px" id="prodPrice"
+				maxlength="100" class="pform-control" placeholder="ex)30,000" onkeypress="return checkNumber(event)"/>
+				<label for="prodAddr" class="form-label">거래장소</label>
+				<input type="text" name="prodAddr" size="30px" id="prodAddr"
+				maxlength="100" class="pform-control" placeholder="구 까지 입력해주세요"/>
+				
+				
+				</span>
+				
+				
+			</dl>		
+		</div>
+		
+		
+	
+		
+		<div>
+								
+			<span class="pagination">			
+			<select name="prodSelect">
+			    <option value="">상품분류</option>
+			    <optgroup label="--ART--"></optgroup>
+				    <option value="poster">POSTER</option>
+				    <option value="pigure">PIGURE</option>
+				    <option value="goods">GOODS</option>
+				    <option value="etc">ETC</option>
+				<optgroup label="--MUSIC--"></optgroup>
+				    <option value="lp">LP</option>
+				    <option value="videos">VIDEOS</option>
+				    <option value="tape">TAPE</option>
+				    <option value="cd">CD/DVD</option>
+				    <option value="instrument">INSTRUMENT</option>
+			</select>
+			</span>
+					
+		</div>
+		
+
+			<div id="">
+			<b>상품상태 : &nbsp;&nbsp;</b>
+			상 &nbsp;&nbsp;<input type="radio" name="prodQuality" value="상"/> 
+			중 &nbsp;&nbsp;<input type="radio" name="prodQuality" value="중"/> 
+			하 &nbsp;&nbsp;<input type="radio" name="prodQuality" value="하"/> 
+
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+			<b>거래방식 : &nbsp;&nbsp;</b>
+			택배 &nbsp;&nbsp;<input type="radio" name="prodTrade" value="택배"/> 
+			직거래 &nbsp;&nbsp;<input type="radio" name="prodTrade" value="직거래"/> 
+			</div>
+			
+			<br/>
+
+		
+		<div class="pagination">
+			<dl>
+				<dt>내&nbsp;&nbsp;&nbsp;&nbsp;용</dt>
+				<dd>
+				<textarea rows="12" cols="85" name="prodContent" 
+				class=""></textarea>
+				</dd>
+			</dl>
+		
+		</div>
+		<br/>
+<!-- 		<div class="sfilebox">
+		    <label for="sfile">상세이미지</label> 
+		    <input type="file" id="sfile" multiple name="upfiles">
+	
+		</div>
+		
+			<div class="filebox">
+		    <label for="file">대표이미지</label> 
+		    <input type="file" id="file" name="tupload">
+
+		</div>
+				 -->
+				
+ 		<span>
+			<a>대표 이미지 등록<input type="file" name="tupload" value="" style=" margin-bottom: 15px;"></a>
+			<a>상세 이미지 등록<input type="file" name="upfiles" multiple style=" margin-bottom: 15px;"></a>
+    
+		</span> 
+		
+	</div>
+	</form>
+		<div id="bbsCreated_footer" style="margin-bottom: 50px;">
+			<input type="button" value=" 등록하기 " class="btn btn-fefault lcart" onclick="sendIt();"/>
+			<input type="reset" value=" 다시입력 " class="btn btn-fefault lcart" onclick="document.myForm.subject.focus();"/>
+			<input type="button" value=" 작성취소 " class="btn btn-fefault lcart" onclick="javascript:location.href='/shop.action';"/>
+	
+		</div>
+
+	
+		</div>
+
+	
+	<footer id="footer"><!--Footer-->
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="companyinfo">
+							<h2><span>MUSE</span>-Market</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+						</div>
+					</div>
+					<div class="col-sm-7">
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe1.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe2.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe3.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe4.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="address">
+							<img src="images/home/map.png" alt="" />
+							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-widget">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Service</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">Online Help</a></li>
+								<li><a href="">Contact Us</a></li>
+								<li><a href="">Order Status</a></li>
+								<li><a href="">Change Location</a></li>
+								<li><a href="">FAQ’s</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>ART Shop</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">POSTER</a></li>
+								<li><a href="">PIGURE</a></li>
+								<li><a href="">GOODS</a></li>
+								<li><a href="">ETC</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>MUSIC Shop</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">LP</a></li>
+								<li><a href="">VIDEOS</a></li>
+								<li><a href="">TAPE</a></li>
+								<li><a href="">CD/DVD</a></li>
+								<li><a href="">INSTRUMENT</a></li>
+							</ul>
+						</div>
+					</div>
+<!-- 					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>About Shopper</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">Company Information</a></li>
+								<li><a href="">Careers</a></li>
+								<li><a href="">Store Location</a></li>
+								<li><a href="">Affillate Program</a></li>
+								<li><a href="">Copyright</a></li>
+							</ul>
+						</div>
+					</div> -->
+<!-- 					<div class="col-sm-3 col-sm-offset-1">
+						<div class="single-widget">
+							<h2>About Shopper</h2>
+							<form action="#" class="searchform">
+								<input type="text" placeholder="Your email address" />
+								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+								<p>Get the most recent updates from <br />our site and be updated your self...</p>
+							</form>
+						</div>
+					</div>
+					 -->
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<p class="pull-left">Copyright © 2022 SAMJO. All rights reserved.</p>
+					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+				</div>
+			</div>
+		</div>
+		
+	</footer><!--/Footer-->
+	
+
+  
+    <script src="js/jquery.js"></script>
+	<script src="js/price-range.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
