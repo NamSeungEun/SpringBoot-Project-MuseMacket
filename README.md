@@ -41,7 +41,7 @@ SpringBoot + html + thymeleaf + Oracle : 예술 중고 거래 사이트
 - 상품리스트 : 요청에 따른 상품리스트 추출, BootStrap 활용한 화면 구현
 - 상세 내역 : 해당 상품에 대한 데이터 추출, Ajax를 사용한 비동기 댓글 프로그래밍 구현
 
-#### 메인 및 마이 페이지 - <a href="https://github.com/NamSeungEun/Springboot-project-MuseMacket.wiki.git" >상세보기 - WIKI 이동</a>
+#### 메인 및 마이 페이지 - <a href="https://github.com/NamSeungEun/Springboot-project-MuseMacket/wiki/%EB%A9%94%EC%9D%B8-%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%B0%8F-%EB%A7%88%EC%9D%B4-%ED%8E%98%EC%9D%B4%EC%A7%80" >상세보기 - WIKI 이동</a>
 - 개인정보 수정 : 클라이언트 DB값 Update
 - 마이페이지 : 해당 클라이언트의 판매물품, 찜상품[장바구니], 댓글목록, 커뮤니티에 올린 게시글 등 확인 및 해당 링크로 이동
 
